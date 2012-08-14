@@ -7,16 +7,17 @@
 //
 
 #import "MSDocument.h"
+#import "MSExportController.h"
+#import <ORCDiscount/ORCDiscount.h>
 
 @implementation MSDocument
 
-- (id)init
+@synthesize htmlString=_htmlString;
+@synthesize markdownView;
+
++ (NSArray *)writableTypes
 {
-    self = [super init];
-    if (self) {
-		// Add your subclass-specific initialization here.
-    }
-    return self;
+	return @[ @"HTML", @"RTF", @"PDF" ];
 }
 
 - (NSString *)windowNibName
@@ -37,11 +38,23 @@
     return YES;
 }
 
+- (NSWindow *)documentWindow
+{
+	NSWindowController *windowController = [[self windowControllers] objectAtIndex:0];
+	return [windowController window];
+}
+
+- (IBAction)export:(id)sender
+{
+	[self saveDocumentTo:sender];
+}
+
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
-	// Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-	// You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
+	if ([typeName isEqualToString:@"HTML"])
+		return [[self htmlString] dataUsingEncoding:NSUTF8StringEncoding];
+	
+	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented for file type %@", NSStringFromSelector(_cmd), typeName] userInfo:nil];
 	@throw exception;
 	return nil;
 }
@@ -51,9 +64,41 @@
 	// Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
 	// You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
 	// If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-	@throw exception;
+	NSString *rawString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	if (!rawString) {
+		if (outError) {
+			NSString *description = NSLocalizedStringFromTable(@"Could not load the file.", @"MSError", @"Description when string can not be initialized with the files data.");
+			NSDictionary *errorDict = @{ NSLocalizedDescriptionKey : description };
+			*outError = [NSError errorWithDomain:@"MarkdownViewer" code:1 userInfo:errorDict];
+			return NO;
+		}
+	}
+	
+	NSString *htmlString = [ORCDiscount markdown2HTML:rawString];
+	htmlString = [NSString stringWithFormat:@"<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><link rel=\"stylesheet\" href=\"style.css\"></head><body>%@</body></html>", htmlString];
+	if (!htmlString) {
+		if (outError) {
+			NSString *description = NSLocalizedStringFromTable(@"The file doesn't appear to be markdown.", @"MSError", @"Description when string can not be converted from markdown to HTML.");
+			NSDictionary *errorDict = @{ NSLocalizedDescriptionKey : description };
+			*outError = [NSError errorWithDomain:@"MarkdownViewer" code:1 userInfo:errorDict];
+			return NO;
+		}
+	}
+	[self setHtmlString:htmlString];
+	NSURL *baseURL = [[NSBundle mainBundle] resourceURL];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[[self markdownView] mainFrame] loadHTMLString:[self htmlString] baseURL:baseURL];
+	});
+	
 	return YES;
+}
+
+- (void)printDocument:(id)sender
+{
+	NSPrintInfo *printInfo = [self printInfo];
+	WebView *printView = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, [printInfo paperSize].width-[printInfo leftMargin]-[printInfo rightMargin], 500)];
+	[[printView mainFrame] loadHTMLString:[self htmlString] baseURL:[[NSBundle mainBundle] resourceURL]];
+	[[self markdownView] print:sender];
 }
 
 @end
