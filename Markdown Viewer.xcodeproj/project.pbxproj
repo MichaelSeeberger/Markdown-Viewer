@@ -22,9 +22,6 @@
 		CA65615E15DA938A00214A07 /* ORCDiscount.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
 		CA65616015DA942500214A07 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = CA65615F15DA942500214A07 /* style.css */; };
 		CA65616215DA97C000214A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65616115DA97C000214A07 /* WebKit.framework */; };
-		CA65616415DAA8A300214A07 /* MSExportAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65616315DAA8A300214A07 /* MSExportAccessoryView.xib */; };
-		CA65616715DAA92000214A07 /* MSExportAccessoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65616615DAA92000214A07 /* MSExportAccessoryViewController.m */; };
-		CA65616A15DAA97000214A07 /* MSExportController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65616915DAA97000214A07 /* MSExportController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,11 +71,6 @@
 		CA65615B15DA8F8300214A07 /* ORCDiscount.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ORCDiscount.framework; sourceTree = "<group>"; };
 		CA65615F15DA942500214A07 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		CA65616115DA97C000214A07 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		CA65616315DAA8A300214A07 /* MSExportAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSExportAccessoryView.xib; sourceTree = "<group>"; };
-		CA65616515DAA92000214A07 /* MSExportAccessoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExportAccessoryViewController.h; sourceTree = "<group>"; };
-		CA65616615DAA92000214A07 /* MSExportAccessoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExportAccessoryViewController.m; sourceTree = "<group>"; };
-		CA65616815DAA97000214A07 /* MSExportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExportController.h; sourceTree = "<group>"; };
-		CA65616915DAA97000214A07 /* MSExportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExportController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,11 +142,6 @@
 			children = (
 				CA65613115DA6BA500214A07 /* MSDocument.h */,
 				CA65613215DA6BA500214A07 /* MSDocument.m */,
-				CA65616515DAA92000214A07 /* MSExportAccessoryViewController.h */,
-				CA65616615DAA92000214A07 /* MSExportAccessoryViewController.m */,
-				CA65616815DAA97000214A07 /* MSExportController.h */,
-				CA65616915DAA97000214A07 /* MSExportController.m */,
-				CA65616315DAA8A300214A07 /* MSExportAccessoryView.xib */,
 				CA65613415DA6BA500214A07 /* MSDocument.xib */,
 				CA65613715DA6BA500214A07 /* MainMenu.xib */,
 				CA65612615DA6BA500214A07 /* Supporting Files */,
@@ -272,7 +259,6 @@
 				CA65613615DA6BA500214A07 /* MSDocument.xib in Resources */,
 				CA65613915DA6BA500214A07 /* MainMenu.xib in Resources */,
 				CA65616015DA942500214A07 /* style.css in Resources */,
-				CA65616415DAA8A300214A07 /* MSExportAccessoryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,8 +295,6 @@
 			files = (
 				CA65612C15DA6BA500214A07 /* main.m in Sources */,
 				CA65613315DA6BA500214A07 /* MSDocument.m in Sources */,
-				CA65616715DAA92000214A07 /* MSExportAccessoryViewController.m in Sources */,
-				CA65616A15DAA97000214A07 /* MSExportController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

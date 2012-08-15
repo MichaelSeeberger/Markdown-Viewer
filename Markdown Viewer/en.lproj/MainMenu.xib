@@ -227,7 +227,8 @@
 								<object class="NSMenuItem" id="246889604">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Export...</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSKeyEquiv">e</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
@@ -1894,11 +1895,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">export:</string>
+						<string key="label">saveDocumentTo:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="246889604"/>
 					</object>
-					<int key="connectionID">535</int>
+					<int key="connectionID">536</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -3071,7 +3072,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">535</int>
+			<int key="maxID">536</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
