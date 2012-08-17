@@ -7,6 +7,7 @@
 //
 
 #import "MSDocument.h"
+#import "MSError.h"
 #import <ORCDiscount/ORCDiscount.h>
 
 @implementation MSDocument
@@ -44,12 +45,16 @@
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
 	if ([typeName isEqualToString:@"HTML"])
-		return [[self htmlString] dataUsingEncoding:NSUTF8StringEncoding];
-	/*else if ([typeName isEqualToString:@"RTF"]) {
-		NSAttributedString *str = [[NSAttributedString alloc] initWithHTML:[[self htmlString] dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:NULL];
-	}*/
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented for file type %@", NSStringFromSelector(_cmd), typeName] userInfo:nil];
+		return [self exportToHTML:outError];
+	else if ([typeName isEqualToString:@"PDF"])
+		return [self exportToPDF:outError];
+	else if ([typeName isEqualToString:@"RTF"])
+		return [self exportToRTF:outError];
+	
+	NSLog(@"I do not know how to export to %@", typeName);
+	NSException *exception = [NSException exceptionWithName:@"UnkownDataType" reason:[NSString stringWithFormat:@"%@ is unimplemented for file type %@", NSStringFromSelector(_cmd), typeName] userInfo:nil];
 	@throw exception;
+	
 	return nil;
 }
 
@@ -85,13 +90,31 @@
 	return YES;
 }
 
+- (NSData *)exportToHTML:(NSError *__autoreleasing*)error
+{
+	return [[self htmlString] dataUsingEncoding:NSUTF8StringEncoding];
+}
+
+- (NSData *)exportToPDF:(NSError *__autoreleasing*)error
+{
+	if (error)
+		*error = MSErrorWithCode(MSFunctionalityNotImplementedError);
+	
+	return NULL;
+}
+
+- (NSData *)exportToRTF:(NSError *__autoreleasing*)error
+{
+	NSAttributedString *str = [[NSAttributedString alloc] initWithHTML:[self exportToHTML:error] baseURL:nil documentAttributes:NULL];
+	if (!str)
+		return nil;
+	
+	return [str RTFFromRange:NSMakeRange(0, [str length]) documentAttributes:NULL];
+}
+
 - (void)printDocument:(id)sender
 {
-	[[self markdownView] print:sender];
-	/*NSPrintInfo *printInfo = [self printInfo];
-	WebView *printView = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, [printInfo paperSize].width-[printInfo leftMargin]-[printInfo rightMargin], 500)];
-	[[printView mainFrame] loadHTMLString:[self htmlString] baseURL:[[NSBundle mainBundle] resourceURL]];
-	[printView print:sender];*/
+	[[[[[self markdownView] mainFrame] frameView] documentView] print:sender];
 }
 
 - (void)presentedItemDidChange

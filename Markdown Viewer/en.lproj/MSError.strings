@@ -1,0 +1,13 @@
+/* 
+  MSError.strings
+  Markdown Viewer
+
+  Created by Michael Seeberger on 16.08.12.
+  Copyright (c) 2012 Michael Seeberger. All rights reserved.
+*/
+
+"reason1000" = "This functionality has not yet been implemented.";
+"description1000" = "I have not yet implemented this functionality, but it should come in the next release (I hope)";
+
+"reason1001" = "Internal error. Please refer to the log files and contact the developers.";
+"description1001" = "Internal error.";
