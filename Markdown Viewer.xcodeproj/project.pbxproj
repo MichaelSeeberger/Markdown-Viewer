@@ -10,7 +10,6 @@
 		CA65612015DA6BA500214A07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65611F15DA6BA500214A07 /* Cocoa.framework */; };
 		CA65612A15DA6BA500214A07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA65612815DA6BA500214A07 /* InfoPlist.strings */; };
 		CA65612C15DA6BA500214A07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65612B15DA6BA500214A07 /* main.m */; };
-		CA65613015DA6BA500214A07 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CA65612E15DA6BA500214A07 /* Credits.rtf */; };
 		CA65613315DA6BA500214A07 /* MSDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65613215DA6BA500214A07 /* MSDocument.m */; };
 		CA65613615DA6BA500214A07 /* MSDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65613415DA6BA500214A07 /* MSDocument.xib */; };
 		CA65613915DA6BA500214A07 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65613715DA6BA500214A07 /* MainMenu.xib */; };
@@ -110,7 +109,6 @@
 		CA65612915DA6BA500214A07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA65612B15DA6BA500214A07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CA65612D15DA6BA500214A07 /* Markdown Viewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Markdown Viewer-Prefix.pch"; sourceTree = "<group>"; };
-		CA65612F15DA6BA500214A07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		CA65613115DA6BA500214A07 /* MSDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDocument.h; sourceTree = "<group>"; };
 		CA65613215DA6BA500214A07 /* MSDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDocument.m; sourceTree = "<group>"; };
 		CA65613F15DA6BA500214A07 /* Markdown ViewerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Markdown ViewerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +125,6 @@
 		CAC0B38515EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MSDocument.strings; sourceTree = "<group>"; };
 		CAC0B38615EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		CAC0B38715EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CAC0B38815EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
 		CAC0B38915EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MSError.strings; sourceTree = "<group>"; };
 		CAC0B38A15EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAC0B38B15EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -258,7 +255,6 @@
 				CA65612815DA6BA500214A07 /* InfoPlist.strings */,
 				CA65612B15DA6BA500214A07 /* main.m */,
 				CA65612D15DA6BA500214A07 /* Markdown Viewer-Prefix.pch */,
-				CA65612E15DA6BA500214A07 /* Credits.rtf */,
 				CA65615F15DA942500214A07 /* style.css */,
 				CAF3044515DD7A880073D15E /* MSError.strings */,
 				CAC0B39015EBB3B2003FDD78 /* Localizable.strings */,
@@ -433,7 +429,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA65612A15DA6BA500214A07 /* InfoPlist.strings in Resources */,
-				CA65613015DA6BA500214A07 /* Credits.rtf in Resources */,
 				CA65613615DA6BA500214A07 /* MSDocument.xib in Resources */,
 				CA65613915DA6BA500214A07 /* MainMenu.xib in Resources */,
 				CA65616015DA942500214A07 /* style.css in Resources */,
@@ -544,15 +539,6 @@
 				CAC0B38715EBAE54003FDD78 /* de */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CA65612E15DA6BA500214A07 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA65612F15DA6BA500214A07 /* en */,
-				CAC0B38815EBAE54003FDD78 /* de */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		CA65613415DA6BA500214A07 /* MSDocument.xib */ = {
@@ -817,6 +803,7 @@
 				CAC0B39515EBB757003FDD78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAF301EE15DC4AA3001ADEF1 /* Build configuration list for PBXNativeTarget "Markdown Viewer QL" */ = {
 			isa = XCConfigurationList;
