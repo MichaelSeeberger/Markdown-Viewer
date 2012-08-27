@@ -1,0 +1,10 @@
+build/
+SenTestingKit.framework/
+Documentation/
+Markdown\ Viewer.xcodeproj/*.mode1v3
+Markdown\ Viewer.xcodeproj/*.pbxuser
+Markdown\ Viewer.xcodeproj/project.xcworkspace/xcuserdata/
+Markdown\ Viewer.xcodeproj/xcuserdata/
+Markdown\ Viewer/InfoPlist.h
+coverage
+.DS_Store

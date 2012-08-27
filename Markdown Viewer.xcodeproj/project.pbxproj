@@ -23,6 +23,7 @@
 		CA65616015DA942500214A07 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = CA65615F15DA942500214A07 /* style.css */; };
 		CA65616215DA97C000214A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65616115DA97C000214A07 /* WebKit.framework */; };
 		CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAC0B39015EBB3B2003FDD78 /* Localizable.strings */; };
+		CAC0B39915EBB792003FDD78 /* versioning.zsh in Resources */ = {isa = PBXBuildFile; fileRef = CAC0B39815EBB792003FDD78 /* versioning.zsh */; };
 		CAF301D815DC4AA3001ADEF1 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D715DC4AA3001ADEF1 /* QuickLook.framework */; };
 		CAF301DA15DC4AA3001ADEF1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */; };
 		CAF301DC15DC4AA3001ADEF1 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301DB15DC4AA3001ADEF1 /* CoreServices.framework */; };
@@ -47,6 +48,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = CA65611A15DA6BA500214A07;
 			remoteInfo = "Markdown Viewer";
+		};
+		CAC0B39615EBB767003FDD78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA65611215DA6BA500214A07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAC0B39215EBB757003FDD78;
+			remoteInfo = Versioning;
 		};
 		CAF301F815DD529A001ADEF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -125,6 +133,7 @@
 		CAC0B38B15EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAC0B38F15EBB3B2003FDD78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CAC0B39115EBB3B6003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CAC0B39815EBB792003FDD78 /* versioning.zsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = versioning.zsh; sourceTree = "<group>"; };
 		CAF301D615DC4AA3001ADEF1 /* Markdown Viewer QL.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Markdown Viewer QL.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF301D715DC4AA3001ADEF1 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
@@ -182,6 +191,7 @@
 		CA65611015DA6BA500214A07 = {
 			isa = PBXGroup;
 			children = (
+				CAC0B39815EBB792003FDD78 /* versioning.zsh */,
 				CA65612515DA6BA500214A07 /* Markdown Viewer */,
 				CA65614515DA6BA500214A07 /* Markdown ViewerTests */,
 				CAF301DF15DC4AA3001ADEF1 /* Markdown Viewer QL */,
@@ -308,6 +318,23 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
+/* Begin PBXLegacyTarget section */
+		CAC0B39215EBB757003FDD78 /* Versioning */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = CAC0B39315EBB757003FDD78 /* Build configuration list for PBXLegacyTarget "Versioning" */;
+			buildPhases = (
+			);
+			buildToolPath = ./versioning.zsh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = Versioning;
+			passBuildSettingsInEnvironment = 1;
+			productName = Versioning;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		CA65611A15DA6BA500214A07 /* Markdown Viewer */ = {
 			isa = PBXNativeTarget;
@@ -322,6 +349,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CAC0B39715EBB767003FDD78 /* PBXTargetDependency */,
 				CAF301F915DD529A001ADEF1 /* PBXTargetDependency */,
 			);
 			name = "Markdown Viewer";
@@ -394,6 +422,7 @@
 				CA65611A15DA6BA500214A07 /* Markdown Viewer */,
 				CA65613E15DA6BA500214A07 /* Markdown ViewerTests */,
 				CAF301D515DC4AA3001ADEF1 /* Markdown Viewer QL */,
+				CAC0B39215EBB757003FDD78 /* Versioning */,
 			);
 		};
 /* End PBXProject section */
@@ -410,6 +439,7 @@
 				CA65616015DA942500214A07 /* style.css in Resources */,
 				CAF3044315DD7A880073D15E /* MSError.strings in Resources */,
 				CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */,
+				CAC0B39915EBB792003FDD78 /* versioning.zsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +523,11 @@
 			isa = PBXTargetDependency;
 			target = CA65611A15DA6BA500214A07 /* Markdown Viewer */;
 			targetProxy = CA65614315DA6BA500214A07 /* PBXContainerItemProxy */;
+		};
+		CAC0B39715EBB767003FDD78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAC0B39215EBB757003FDD78 /* Versioning */;
+			targetProxy = CAC0B39615EBB767003FDD78 /* PBXContainerItemProxy */;
 		};
 		CAF301F915DD529A001ADEF1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -688,6 +723,27 @@
 			};
 			name = Release;
 		};
+		CAC0B39415EBB757003FDD78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CAC0B39515EBB757003FDD78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CAF301EC15DC4AA3001ADEF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -753,6 +809,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CAC0B39315EBB757003FDD78 /* Build configuration list for PBXLegacyTarget "Versioning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAC0B39415EBB757003FDD78 /* Debug */,
+				CAC0B39515EBB757003FDD78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		CAF301EE15DC4AA3001ADEF1 /* Build configuration list for PBXNativeTarget "Markdown Viewer QL" */ = {
 			isa = XCConfigurationList;
