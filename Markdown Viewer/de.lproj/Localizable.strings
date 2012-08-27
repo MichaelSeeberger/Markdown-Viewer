@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Markdown Viewer
+
+  Created by Michael Seeberger on 27.08.12.
+  Copyright (c) 2012 Michael Seeberger. All rights reserved.
+*/
+
+"I have not yet been able to get a good result for exporting PDFs. If you don't care about seeing nice pages and stuff, go ahead. However, I recommend to create a PDF version of this file via the print panel. For that, choose \"Print\" in the \"File\" menu. This will display the print panel and you can see a button titled PDF at the bottom corner." = "Es ist mir bisher noch nicht gelungen, eine gute Exportfunktion für das PDF Format zu programmieren. Wenn es dir egal ist, alles auf einer Seite zu kriegen, kannst du fortfahren. Ich empfehle aber, über die \"Drucken\"-Funktion zu exportieren. Gehe dazu ins \"Ablage\" Menü und wähle dort \"Drucken…\". Es sollte jetzt ein fenster erscheinen, in dessen linker unteren Ecke ein Knopf mit der Überschrift \"PDF\" ist. Drücke den Knopf und wähle \"Als PDF sichern…\".";
+"Use the print panel" = "Die Drucken-Funktion verwenden";
+"Continue anyway" = "Trotzdem fortfahren";

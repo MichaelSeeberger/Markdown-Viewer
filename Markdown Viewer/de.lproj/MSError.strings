@@ -1,0 +1,16 @@
+/* 
+  MSError.strings
+  Markdown Viewer
+
+  Created by Michael Seeberger on 16.08.12.
+  Copyright (c) 2012 Michael Seeberger. All rights reserved.
+*/
+
+"reason1000" = "Diese Funktion wurde noch nicht implementiert.";
+"description1000" = "Diese Funktion wurde noch nicht implementiert. Sie wird aber (hoffentlich) in der nächsten Version da sein.";
+
+"reason1001" = "Es ist ein interner Fehler aufgetreten. Für Details kannst du die Log-Dateien anschauen und sie dann dem Entwickler senden.";
+"description1001" = "Interner fehler.";
+
+"reason10" = "Beim exportieren der Datei ist ein Fehler aufgetreten.";
+"description10" = "Fehler beim Exportieren.";

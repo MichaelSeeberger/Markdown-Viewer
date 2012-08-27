@@ -1,4 +1,10 @@
-/* Localized versions of Info.plist keys */
+/* 
+  Localizable.strings
+  Markdown Viewer
+
+  Created by Michael Seeberger on 27.08.12.
+  Copyright (c) 2012 Michael Seeberger. All rights reserved.
+*/
 
 "I have not yet been able to get a good result for exporting PDFs. If you don't care about seeing nice pages and stuff, go ahead. However, I recommend to create a PDF version of this file via the print panel. For that, choose \"Print\" in the \"File\" menu. This will display the print panel and you can see a button titled PDF at the bottom corner." = "I have not yet been able to get a good result for exporting PDFs. If you don't care about seeing nice pages and stuff, go ahead. However, I recommend to create a PDF version of this file via the print panel. For that, choose \"Print\" in the \"File\" menu. This will display the print panel and you can see a button titled PDF at the bottom corner.";
 "Use the print panel" = "Use the print panel";

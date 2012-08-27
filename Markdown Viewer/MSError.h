@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 enum MSErrorCode {
+	MSExportError = 10,
 	MSFunctionalityNotImplementedError = 1000,
 	MSInternalError = 1001
 };

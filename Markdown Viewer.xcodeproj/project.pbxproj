@@ -22,6 +22,7 @@
 		CA65615E15DA938A00214A07 /* ORCDiscount.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
 		CA65616015DA942500214A07 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = CA65615F15DA942500214A07 /* style.css */; };
 		CA65616215DA97C000214A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65616115DA97C000214A07 /* WebKit.framework */; };
+		CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAC0B39015EBB3B2003FDD78 /* Localizable.strings */; };
 		CAF301D815DC4AA3001ADEF1 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D715DC4AA3001ADEF1 /* QuickLook.framework */; };
 		CAF301DA15DC4AA3001ADEF1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */; };
 		CAF301DC15DC4AA3001ADEF1 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301DB15DC4AA3001ADEF1 /* CoreServices.framework */; };
@@ -36,6 +37,7 @@
 		CAF301FC15DD5969001ADEF1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65611F15DA6BA500214A07 /* Cocoa.framework */; };
 		CAF3043F15DD735A0073D15E /* MSError.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF3043E15DD735A0073D15E /* MSError.m */; };
 		CAF3044315DD7A880073D15E /* MSError.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF3044515DD7A880073D15E /* MSError.strings */; };
+		CAF37F0715DE4E1A000B1B99 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF37F0115DE4A7E000B1B99 /* Quartz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +105,6 @@
 		CA65612F15DA6BA500214A07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		CA65613115DA6BA500214A07 /* MSDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDocument.h; sourceTree = "<group>"; };
 		CA65613215DA6BA500214A07 /* MSDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDocument.m; sourceTree = "<group>"; };
-		CA65613515DA6BA500214A07 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MSDocument.xib; sourceTree = "<group>"; };
-		CA65613815DA6BA500214A07 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CA65613F15DA6BA500214A07 /* Markdown ViewerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Markdown ViewerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA65614015DA6BA500214A07 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CA65614715DA6BA500214A07 /* Markdown ViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Markdown ViewerTests-Info.plist"; sourceTree = "<group>"; };
@@ -114,6 +114,17 @@
 		CA65615B15DA8F8300214A07 /* ORCDiscount.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ORCDiscount.framework; sourceTree = "<group>"; };
 		CA65615F15DA942500214A07 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		CA65616115DA97C000214A07 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		CAC0B38215EBADCD003FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MSDocument.xib; sourceTree = "<group>"; };
+		CAC0B38315EBADCD003FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CAC0B38515EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MSDocument.strings; sourceTree = "<group>"; };
+		CAC0B38615EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		CAC0B38715EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CAC0B38815EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
+		CAC0B38915EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MSError.strings; sourceTree = "<group>"; };
+		CAC0B38A15EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CAC0B38B15EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CAC0B38F15EBB3B2003FDD78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CAC0B39115EBB3B6003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CAF301D615DC4AA3001ADEF1 /* Markdown Viewer QL.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Markdown Viewer QL.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF301D715DC4AA3001ADEF1 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
@@ -128,6 +139,7 @@
 		CAF3043D15DD735A0073D15E /* MSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSError.h; sourceTree = "<group>"; };
 		CAF3043E15DD735A0073D15E /* MSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSError.m; sourceTree = "<group>"; };
 		CAF3044415DD7A880073D15E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MSError.strings; sourceTree = "<group>"; };
+		CAF37F0115DE4A7E000B1B99 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF37F0715DE4E1A000B1B99 /* Quartz.framework in Frameworks */,
 				CA65616215DA97C000214A07 /* WebKit.framework in Frameworks */,
 				CA65612015DA6BA500214A07 /* Cocoa.framework in Frameworks */,
 				CA65615C15DA8F8300214A07 /* ORCDiscount.framework in Frameworks */,
@@ -198,6 +211,7 @@
 				CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */,
 				CAF301DB15DC4AA3001ADEF1 /* CoreServices.framework */,
 				CAF301DD15DC4AA3001ADEF1 /* CoreFoundation.framework */,
+				CAF37F0115DE4A7E000B1B99 /* Quartz.framework */,
 				CA65612115DA6BA500214A07 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -237,6 +251,7 @@
 				CA65612E15DA6BA500214A07 /* Credits.rtf */,
 				CA65615F15DA942500214A07 /* style.css */,
 				CAF3044515DD7A880073D15E /* MSError.strings */,
+				CAC0B39015EBB3B2003FDD78 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -369,6 +384,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = CA65611015DA6BA500214A07;
 			productRefGroup = CA65611C15DA6BA500214A07 /* Products */;
@@ -393,6 +409,7 @@
 				CA65613915DA6BA500214A07 /* MainMenu.xib in Resources */,
 				CA65616015DA942500214A07 /* style.css in Resources */,
 				CAF3044315DD7A880073D15E /* MSError.strings in Resources */,
+				CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +506,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CA65612915DA6BA500214A07 /* en */,
+				CAC0B38715EBAE54003FDD78 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -497,6 +515,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CA65612F15DA6BA500214A07 /* en */,
+				CAC0B38815EBAE54003FDD78 /* de */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -504,7 +523,8 @@
 		CA65613415DA6BA500214A07 /* MSDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CA65613515DA6BA500214A07 /* en */,
+				CAC0B38215EBADCD003FDD78 /* Base */,
+				CAC0B38515EBAE54003FDD78 /* de */,
 			);
 			name = MSDocument.xib;
 			sourceTree = "<group>";
@@ -512,7 +532,8 @@
 		CA65613715DA6BA500214A07 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CA65613815DA6BA500214A07 /* en */,
+				CAC0B38315EBADCD003FDD78 /* Base */,
+				CAC0B38615EBAE54003FDD78 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -521,14 +542,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				CA65614915DA6BA500214A07 /* en */,
+				CAC0B38B15EBAE54003FDD78 /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CAC0B39015EBB3B2003FDD78 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAC0B38F15EBB3B2003FDD78 /* en */,
+				CAC0B39115EBB3B6003FDD78 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		CAF301E215DC4AA3001ADEF1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CAF301E315DC4AA3001ADEF1 /* en */,
+				CAC0B38A15EBAE54003FDD78 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -537,6 +569,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CAF3044415DD7A880073D15E /* en */,
+				CAC0B38915EBAE54003FDD78 /* de */,
 			);
 			name = MSError.strings;
 			sourceTree = "<group>";
@@ -662,6 +695,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Markdown Viewer QL/Markdown Viewer QL-Prefix.pch";
@@ -679,6 +713,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Markdown Viewer QL/Markdown Viewer QL-Prefix.pch";

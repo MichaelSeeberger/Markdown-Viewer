@@ -9,6 +9,13 @@
 #import "MSDocument.h"
 #import "MSError.h"
 #import <ORCDiscount/ORCDiscount.h>
+#import <Quartz/Quartz.h>
+
+@interface MSDocument ()
+
+- (NSView <WebDocumentView> *)documentView;
+
+@end
 
 @implementation MSDocument
 
@@ -26,9 +33,19 @@
 	return @"MSDocument";
 }
 
+- (BOOL)isDocumentEdited
+{
+	return NO;
+}
+
+- (BOOL)hasUnautosavedChanges
+{
+	return NO;
+}
+
 + (BOOL)autosavesInPlace
 {
-    return YES;
+    return NO;
 }
 
 - (NSWindow *)documentWindow
@@ -52,8 +69,8 @@
 		return [self exportToRTF:outError];
 	
 	NSLog(@"I do not know how to export to %@", typeName);
-	NSException *exception = [NSException exceptionWithName:@"UnkownDataType" reason:[NSString stringWithFormat:@"%@ is unimplemented for file type %@", NSStringFromSelector(_cmd), typeName] userInfo:nil];
-	@throw exception;
+	if (outError)
+		*outError = MSErrorWithCode(MSExportError);
 	
 	return nil;
 }
@@ -95,12 +112,41 @@
 	return [[self htmlString] dataUsingEncoding:NSUTF8StringEncoding];
 }
 
+- (BOOL)letTheUserDecideIfSheWantsASloppyPDF
+{
+	NSString *info = NSLocalizedString(@"I have not yet been able to get a good result for exporting PDFs. If you don't care about seeing nice pages and stuff, go ahead. However, I recommend to create a PDF version of this file via the print panel. For that, choose \"Print\" in the \"File\" menu. This will display the print panel and you can see a button titled PDF at the bottom corner.", @"Alternative");
+	NSString *description = NSLocalizedString(@"About that...", @"PDF exporting problem");
+	NSAlert *alert = [[NSAlert alloc] init];
+	[alert setAlertStyle:NSInformationalAlertStyle];
+	[alert setInformativeText:info];
+	[alert setMessageText:description];
+	[alert addButtonWithTitle:NSLocalizedString(@"Use the print panel", @"Use the print panel")];
+	[alert addButtonWithTitle:NSLocalizedString(@"Continue anyway", @"Continue anyway")];
+	
+	return [alert runModal] != NSAlertFirstButtonReturn;
+}
+
 - (NSData *)exportToPDF:(NSError *__autoreleasing*)error
 {
-	if (error)
-		*error = MSErrorWithCode(MSFunctionalityNotImplementedError);
+	if (![self letTheUserDecideIfSheWantsASloppyPDF]) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self printDocument:nil];
+		});
+		return nil;
+	}
 	
-	return NULL;
+	NSView<WebDocumentView> *documentView = [self documentView];
+	
+	NSMutableData *outData = [NSMutableData data];
+	
+	NSPrintOperation *printOperation = [NSPrintOperation PDFOperationWithView:documentView insideRect:[documentView bounds] toData:outData printInfo:[self printInfo]];
+	if ([printOperation runOperation])
+		return outData;
+	
+	if (error)
+		*error = MSErrorWithCode(MSExportError);
+	
+	return outData;
 }
 
 - (NSData *)exportToRTF:(NSError *__autoreleasing*)error
@@ -114,12 +160,17 @@
 
 - (void)printDocument:(id)sender
 {
-	[[[[[self markdownView] mainFrame] frameView] documentView] print:sender];
+	[[NSPrintOperation printOperationWithView:[self documentView] printInfo:[self printInfo]] runOperation];
 }
 
 - (void)presentedItemDidChange
 {
 	[self revertToContentsOfURL:[self fileURL] ofType:@"Markdown" error:NULL];
+}
+
+- (NSView <WebDocumentView> *)documentView
+{
+	return [[[[self markdownView] mainFrame] frameView] documentView];
 }
 
 @end
