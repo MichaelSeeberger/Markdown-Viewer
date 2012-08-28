@@ -20,10 +20,8 @@
 		CA65614D15DA6BA500214A07 /* Markdown_ViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65614C15DA6BA500214A07 /* Markdown_ViewerTests.m */; };
 		CA65615C15DA8F8300214A07 /* ORCDiscount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
 		CA65615E15DA938A00214A07 /* ORCDiscount.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
-		CA65616015DA942500214A07 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = CA65615F15DA942500214A07 /* style.css */; };
 		CA65616215DA97C000214A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65616115DA97C000214A07 /* WebKit.framework */; };
 		CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAC0B39015EBB3B2003FDD78 /* Localizable.strings */; };
-		CAC0B39915EBB792003FDD78 /* versioning.zsh in Resources */ = {isa = PBXBuildFile; fileRef = CAC0B39815EBB792003FDD78 /* versioning.zsh */; };
 		CAF301D815DC4AA3001ADEF1 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D715DC4AA3001ADEF1 /* QuickLook.framework */; };
 		CAF301DA15DC4AA3001ADEF1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */; };
 		CAF301DC15DC4AA3001ADEF1 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301DB15DC4AA3001ADEF1 /* CoreServices.framework */; };
@@ -120,7 +118,6 @@
 		CA65614B15DA6BA500214A07 /* Markdown_ViewerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Markdown_ViewerTests.h; sourceTree = "<group>"; };
 		CA65614C15DA6BA500214A07 /* Markdown_ViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Markdown_ViewerTests.m; sourceTree = "<group>"; };
 		CA65615B15DA8F8300214A07 /* ORCDiscount.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ORCDiscount.framework; sourceTree = "<group>"; };
-		CA65615F15DA942500214A07 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		CA65616115DA97C000214A07 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CAC0B38215EBADCD003FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MSDocument.xib; sourceTree = "<group>"; };
 		CAC0B38315EBADCD003FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -258,7 +255,6 @@
 				CA65612815DA6BA500214A07 /* InfoPlist.strings */,
 				CA65612B15DA6BA500214A07 /* main.m */,
 				CA65612D15DA6BA500214A07 /* Markdown Viewer-Prefix.pch */,
-				CA65615F15DA942500214A07 /* style.css */,
 				CAF3044515DD7A880073D15E /* MSError.strings */,
 				CAC0B39015EBB3B2003FDD78 /* Localizable.strings */,
 			);
@@ -434,10 +430,8 @@
 				CA65612A15DA6BA500214A07 /* InfoPlist.strings in Resources */,
 				CA0BE9A315ED2D07000C6305 /* MSDocument.xib in Resources */,
 				CA0BE9A415ED2D09000C6305 /* MainMenu.xib in Resources */,
-				CA65616015DA942500214A07 /* style.css in Resources */,
 				CAF3044315DD7A880073D15E /* MSError.strings in Resources */,
 				CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */,
-				CAC0B39915EBB792003FDD78 /* versioning.zsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +677,7 @@
 				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
