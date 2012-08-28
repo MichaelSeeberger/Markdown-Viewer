@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0BE9A315ED2D07000C6305 /* MSDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65613415DA6BA500214A07 /* MSDocument.xib */; };
+		CA0BE9A415ED2D09000C6305 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65613715DA6BA500214A07 /* MainMenu.xib */; };
+		CA0BE9A515ED2D1B000C6305 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65616115DA97C000214A07 /* WebKit.framework */; };
 		CA65612015DA6BA500214A07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65611F15DA6BA500214A07 /* Cocoa.framework */; };
 		CA65612A15DA6BA500214A07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA65612815DA6BA500214A07 /* InfoPlist.strings */; };
 		CA65612C15DA6BA500214A07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65612B15DA6BA500214A07 /* main.m */; };
 		CA65613315DA6BA500214A07 /* MSDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CA65613215DA6BA500214A07 /* MSDocument.m */; };
-		CA65613615DA6BA500214A07 /* MSDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65613415DA6BA500214A07 /* MSDocument.xib */; };
-		CA65613915DA6BA500214A07 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA65613715DA6BA500214A07 /* MainMenu.xib */; };
 		CA65614115DA6BA500214A07 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65614015DA6BA500214A07 /* SenTestingKit.framework */; };
 		CA65614215DA6BA500214A07 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65611F15DA6BA500214A07 /* Cocoa.framework */; };
 		CA65614A15DA6BA500214A07 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA65614815DA6BA500214A07 /* InfoPlist.strings */; };
@@ -33,7 +34,7 @@
 		CAF301EA15DC4AA3001ADEF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF301E915DC4AA3001ADEF1 /* main.m */; };
 		CAF301F415DC4CA6001ADEF1 /* ORCDiscount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
 		CAF301F615DC4CB5001ADEF1 /* ORCDiscount.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
-		CAF301FB15DD5305001ADEF1 /* Markdown Viewer QL.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = CAF301D615DC4AA3001ADEF1 /* Markdown Viewer QL.qlgenerator */; };
+		CAF301FB15DD5305001ADEF1 /* Markdown Viewer QL.qlgenerator in Copy QuickLook Plugin */ = {isa = PBXBuildFile; fileRef = CAF301D615DC4AA3001ADEF1 /* Markdown Viewer QL.qlgenerator */; };
 		CAF301FC15DD5969001ADEF1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65611F15DA6BA500214A07 /* Cocoa.framework */; };
 		CAF3043F15DD735A0073D15E /* MSError.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF3043E15DD735A0073D15E /* MSError.m */; };
 		CAF3044315DD7A880073D15E /* MSError.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF3044515DD7A880073D15E /* MSError.strings */; };
@@ -87,14 +88,15 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CAF301FA15DD529E001ADEF1 /* CopyFiles */ = {
+		CAF301FA15DD529E001ADEF1 /* Copy QuickLook Plugin */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = ../Library/QuickLook;
 			dstSubfolderSpec = 7;
 			files = (
-				CAF301FB15DD5305001ADEF1 /* Markdown Viewer QL.qlgenerator in CopyFiles */,
+				CAF301FB15DD5305001ADEF1 /* Markdown Viewer QL.qlgenerator in Copy QuickLook Plugin */,
 			);
+			name = "Copy QuickLook Plugin";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0BE9A515ED2D1B000C6305 /* WebKit.framework in Frameworks */,
 				CAF301D815DC4AA3001ADEF1 /* QuickLook.framework in Frameworks */,
 				CAF301DA15DC4AA3001ADEF1 /* ApplicationServices.framework in Frameworks */,
 				CAF301DC15DC4AA3001ADEF1 /* CoreServices.framework in Frameworks */,
@@ -340,7 +343,7 @@
 				CA65611815DA6BA500214A07 /* Frameworks */,
 				CA65611915DA6BA500214A07 /* Resources */,
 				CA65615D15DA938100214A07 /* Copy Frameworks */,
-				CAF301FA15DD529E001ADEF1 /* CopyFiles */,
+				CAF301FA15DD529E001ADEF1 /* Copy QuickLook Plugin */,
 			);
 			buildRules = (
 			);
@@ -429,8 +432,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA65612A15DA6BA500214A07 /* InfoPlist.strings in Resources */,
-				CA65613615DA6BA500214A07 /* MSDocument.xib in Resources */,
-				CA65613915DA6BA500214A07 /* MainMenu.xib in Resources */,
+				CA0BE9A315ED2D07000C6305 /* MSDocument.xib in Resources */,
+				CA0BE9A415ED2D09000C6305 /* MainMenu.xib in Resources */,
 				CA65616015DA942500214A07 /* style.css in Resources */,
 				CAF3044315DD7A880073D15E /* MSError.strings in Resources */,
 				CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */,
@@ -660,6 +663,7 @@
 				INFOPLIST_FILE = "Markdown Viewer/Markdown Viewer-Info.plist";
 				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -678,6 +682,7 @@
 				INFOPLIST_FILE = "Markdown Viewer/Markdown Viewer-Info.plist";
 				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -747,6 +752,7 @@
 				GCC_PREFIX_HEADER = "Markdown Viewer QL/Markdown Viewer QL-Prefix.pch";
 				INFOPLIST_FILE = "Markdown Viewer QL/Markdown Viewer QL-Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -765,6 +771,7 @@
 				GCC_PREFIX_HEADER = "Markdown Viewer QL/Markdown Viewer QL-Prefix.pch";
 				INFOPLIST_FILE = "Markdown Viewer QL/Markdown Viewer QL-Info.plist";
 				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
 			};

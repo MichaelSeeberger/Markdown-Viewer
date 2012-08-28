@@ -87,8 +87,8 @@
 		}
 	}
 	
-	NSString *htmlString = [ORCDiscount markdown2HTML:rawString];
-	htmlString = [NSString stringWithFormat:@"<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><style>%@</style></head><body>%@</body></html>", [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"style" ofType:@"css"] encoding:NSUTF8StringEncoding error:outError], htmlString];
+	NSString *htmlString = [ORCDiscount HTMLPage:[ORCDiscount markdown2HTML:rawString] withCSSFromURL:[ORCDiscount cssURL]];
+	
 	if (!htmlString) {
 		if (outError) {
 			NSString *description = NSLocalizedStringFromTable(@"The file doesn't appear to be markdown.", @"MSError", @"Description when string can not be converted from markdown to HTML.");
