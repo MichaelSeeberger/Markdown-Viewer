@@ -12,5 +12,11 @@
 "reason1001" = "Es ist ein interner Fehler aufgetreten. Für Details kannst du die Log-Dateien anschauen und sie dann dem Entwickler senden.";
 "description1001" = "Interner fehler.";
 
+"reason1" = "Die Datei konnte nicht geöffnet werden.";
+"description1" = "Ich konnte das Format der Datei nicht erkennen.";
+
+"reason2" = "Die Datei die Sie öffnen wollten, konnte nicht geöffnet werden. Sind Sie sicher, dass es sich um eine Markdown Datei handelt?";
+"description2" = "Die Datei scheint keine Markdown Datei zu sein.";
+
 "reason10" = "Beim exportieren der Datei ist ein Fehler aufgetreten.";
 "description10" = "Fehler beim Exportieren.";

@@ -12,5 +12,11 @@
 "reason1001" = "Internal error. Please refer to the log files and contact the developers.";
 "description1001" = "Internal error.";
 
+"reason1" = "Could not load the file.";
+"description1" = "I couldn't determine the opened files format.";
+
+"reason2" = "The file you opened could not be read, is it possible that this file isn't in the markup format?";
+"description2" = "The file doesn't appear to be markdown.";
+
 "reason10" = "There has been an error while trying to export the file.";
 "description10" = "Export error.";

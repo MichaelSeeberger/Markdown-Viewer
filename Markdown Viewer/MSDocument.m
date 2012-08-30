@@ -59,43 +59,39 @@
 	[self saveDocumentTo:sender];
 }
 
-- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
+- (BOOL)writeToURL:(NSURL *)url ofType:(NSString *)typeName error:(NSError *__autoreleasing *)outError
 {
+	NSData *data = nil;
 	if ([typeName isEqualToString:@"HTML"])
-		return [self exportToHTML:outError];
-	else if ([typeName isEqualToString:@"PDF"])
-		return [self exportToPDF:outError];
-	else if ([typeName isEqualToString:@"RTF"])
-		return [self exportToRTF:outError];
+		data = [self exportToHTML:outError];
+	else if ([typeName isEqualToString:@"PDF"]) {
+		return [self exportToPDFAtURL:url error:outError];
+	} else if ([typeName isEqualToString:@"RTF"])
+		data = [self exportToRTF:outError];
 	
-	NSLog(@"I do not know how to export to %@", typeName);
-	if (outError)
-		*outError = MSErrorWithCode(MSExportError);
+	if (data)
+		[data writeToURL:url atomically:YES];
 	
-	return nil;
+	return data != nil;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
 	NSString *rawString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	if (!rawString) {
-		if (outError) {
-			NSString *description = NSLocalizedStringFromTable(@"Could not load the file.", @"MSError", @"Description when string can not be initialized with the files data.");
-			NSDictionary *errorDict = @{ NSLocalizedDescriptionKey : description };
-			*outError = [NSError errorWithDomain:@"MarkdownViewer" code:1 userInfo:errorDict];
-			return NO;
-		}
+		if (outError)
+			*outError = MSErrorWithCode(MSFileCouldNotBeLoadedError);
+		
+		return NO;
 	}
 	
 	NSString *htmlString = [ORCDiscount HTMLPage:[ORCDiscount markdown2HTML:rawString] withCSSFromURL:[ORCDiscount cssURL]];
 	
 	if (!htmlString) {
-		if (outError) {
-			NSString *description = NSLocalizedStringFromTable(@"The file doesn't appear to be markdown.", @"MSError", @"Description when string can not be converted from markdown to HTML.");
-			NSDictionary *errorDict = @{ NSLocalizedDescriptionKey : description };
-			*outError = [NSError errorWithDomain:@"MarkdownViewer" code:1 userInfo:errorDict];
-			return NO;
-		}
+		if (outError)
+			*outError = MSErrorWithCode(MSFileIsNotMarkdownFormatError);
+		
+		return NO;
 	}
 	
 	[self setHtmlString:htmlString];
@@ -112,41 +108,19 @@
 	return [[self htmlString] dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (BOOL)letTheUserDecideIfSheWantsASloppyPDF
+- (BOOL)exportToPDFAtURL:(NSURL *)url error:(NSError *__autoreleasing*)error
 {
-	NSString *info = NSLocalizedString(@"I have not yet been able to get a good result for exporting PDFs. If you don't care about seeing nice pages and stuff, go ahead. However, I recommend to create a PDF version of this file via the print panel. For that, choose \"Print\" in the \"File\" menu. This will display the print panel and you can see a button titled PDF at the bottom corner.", @"Alternative");
-	NSString *description = NSLocalizedString(@"About that...", @"PDF exporting problem");
-	NSAlert *alert = [[NSAlert alloc] init];
-	[alert setAlertStyle:NSInformationalAlertStyle];
-	[alert setInformativeText:info];
-	[alert setMessageText:description];
-	[alert addButtonWithTitle:NSLocalizedString(@"Use the print panel", @"Use the print panel")];
-	[alert addButtonWithTitle:NSLocalizedString(@"Continue anyway", @"Continue anyway")];
+	NSPrintInfo *defaultPrintInfo = [self printInfo];
+	NSMutableDictionary *printInfoDict = [NSMutableDictionary dictionaryWithDictionary:[defaultPrintInfo dictionary]];
+	[printInfoDict setObject:NSPrintSaveJob forKey:NSPrintJobDisposition];
+	[printInfoDict setObject:url forKey:NSPrintJobSavingURL];
+	[printInfoDict setObject:NSPrintSaveJob forKey:NSPrintJobDisposition];
 	
-	return [alert runModal] != NSAlertFirstButtonReturn;
-}
-
-- (NSData *)exportToPDF:(NSError *__autoreleasing*)error
-{
-	if (![self letTheUserDecideIfSheWantsASloppyPDF]) {
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self printDocument:nil];
-		});
-		return nil;
-	}
+	NSPrintInfo *printInfo = [[NSPrintInfo alloc] initWithDictionary:printInfoDict];
+	NSPrintOperation *printOperation = [NSPrintOperation printOperationWithView:[self documentView] printInfo:printInfo];
+	[printOperation setShowsPrintPanel:NO];
 	
-	NSView<WebDocumentView> *documentView = [self documentView];
-	
-	NSMutableData *outData = [NSMutableData data];
-	
-	NSPrintOperation *printOperation = [NSPrintOperation PDFOperationWithView:documentView insideRect:[documentView bounds] toData:outData printInfo:[self printInfo]];
-	if ([printOperation runOperation])
-		return outData;
-	
-	if (error)
-		*error = MSErrorWithCode(MSExportError);
-	
-	return outData;
+	return [printOperation runOperation];
 }
 
 - (NSData *)exportToRTF:(NSError *__autoreleasing*)error

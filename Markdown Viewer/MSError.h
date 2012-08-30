@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 enum MSErrorCode {
+	MSFileCouldNotBeLoadedError = 1,
+	MSFileIsNotMarkdownFormatError = 2,
 	MSExportError = 10,
 	MSFunctionalityNotImplementedError = 1000,
 	MSInternalError = 1001
