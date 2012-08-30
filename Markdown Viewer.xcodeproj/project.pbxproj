@@ -21,7 +21,7 @@
 		CA65615C15DA8F8300214A07 /* ORCDiscount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
 		CA65615E15DA938A00214A07 /* ORCDiscount.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CA65615B15DA8F8300214A07 /* ORCDiscount.framework */; };
 		CA65616215DA97C000214A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA65616115DA97C000214A07 /* WebKit.framework */; };
-		CA8D373215ED520B001CE16C /* README in Resources */ = {isa = PBXBuildFile; fileRef = CA8D373115ED520B001CE16C /* README */; };
+		CA8D373215ED520B001CE16C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA8D373115ED520B001CE16C /* README.md */; };
 		CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAC0B39015EBB3B2003FDD78 /* Localizable.strings */; };
 		CAF301D815DC4AA3001ADEF1 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D715DC4AA3001ADEF1 /* QuickLook.framework */; };
 		CAF301DA15DC4AA3001ADEF1 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF301D915DC4AA3001ADEF1 /* ApplicationServices.framework */; };
@@ -120,7 +120,7 @@
 		CA65614C15DA6BA500214A07 /* Markdown_ViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Markdown_ViewerTests.m; sourceTree = "<group>"; };
 		CA65615B15DA8F8300214A07 /* ORCDiscount.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ORCDiscount.framework; sourceTree = "<group>"; };
 		CA65616115DA97C000214A07 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		CA8D373115ED520B001CE16C /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		CA8D373115ED520B001CE16C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CAC0B38215EBADCD003FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MSDocument.xib; sourceTree = "<group>"; };
 		CAC0B38315EBADCD003FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CAC0B38515EBAE54003FDD78 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MSDocument.strings; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		CA65611015DA6BA500214A07 = {
 			isa = PBXGroup;
 			children = (
-				CA8D373115ED520B001CE16C /* README */,
+				CA8D373115ED520B001CE16C /* README.md */,
 				CAC0B39815EBB792003FDD78 /* versioning.zsh */,
 				CA65612515DA6BA500214A07 /* Markdown Viewer */,
 				CA65614515DA6BA500214A07 /* Markdown ViewerTests */,
@@ -435,7 +435,7 @@
 				CA0BE9A415ED2D09000C6305 /* MainMenu.xib in Resources */,
 				CAF3044315DD7A880073D15E /* MSError.strings in Resources */,
 				CAC0B38E15EBB3B2003FDD78 /* Localizable.strings in Resources */,
-				CA8D373215ED520B001CE16C /* README in Resources */,
+				CA8D373215ED520B001CE16C /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

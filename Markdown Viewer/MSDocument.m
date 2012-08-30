@@ -94,6 +94,9 @@
 		return NO;
 	}
 	
+	if ([[self htmlString] isEqualToString:htmlString])
+		return YES;
+	
 	[self setHtmlString:htmlString];
 	NSURL *baseURL = [[NSBundle mainBundle] resourceURL];
 	dispatch_async(dispatch_get_main_queue(), ^{
